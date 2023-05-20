@@ -15,15 +15,21 @@ const setup = () => {
         firstCard.src
         ==
         secondCard.src
-      )
+      ) {
         console.log("match")
-      else {
+
+        $(`#${firstCard.id}`).parent().off("click")
+        $(`#${secondCard.id}`).parent().off("click")
+
+      } else {
+    
         console.log("no match")
-        $(`#${firstCard.id}`).parent().toggleClass("flip")
-        $(`#${secondCard.id}`).parent().toggleClass("flip")
+        setTimeout(() => {
+            $(`#${firstCard.id}`).parent().toggleClass("flip")
+            $(`#${secondCard.id}`).parent().toggleClass("flip")
+          }, 1000)
       
       }
-     
     }
   });
 }
