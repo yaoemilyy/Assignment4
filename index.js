@@ -17,8 +17,13 @@ const setup = () => {
         secondCard.src
       )
         console.log("match")
-      else
+      else {
         console.log("no match")
+        $(`#${firstCard.id}`).parent().toggleClass("flip")
+        $(`#${secondCard.id}`).parent().toggleClass("flip")
+      
+      }
+     
     }
   });
 }
