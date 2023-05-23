@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Difficulty Selection</title>
+  <!-- Import jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    /* Button Styles */
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    /* Difficulty Selection Styles */
+    #difficulty-select {
+      margin-top: 10px;
+    }
+
+    #difficulty-select label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    #difficulty-select select {
+      padding: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Add these buttons after the <h2 class="total-pairs"></h2> element -->
+
+
+  <div id="difficulty-select">
+    <label for="difficulty">Select Difficulty:</label>
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+  </div>
+
+</br>
+
+  <button id="start-button">Start</button>
+
+  <script>
+    const setup = () => {
+
+
+      // Start button click event handler
+      $("#start-button").on("click", function () {
+        const selectedDifficulty = $("#difficulty").val();
+
+        // Redirect to the corresponding HTML page based on the selected difficulty
+        switch (selectedDifficulty) {
+          case "easy":
+            window.location.href = "easy.html";
+            break;
+          case "medium":
+            window.location.href = "medium.html";
+            break;
+          case "hard":
+            window.location.href = "hard.html";
+            break;
+          default:
+            console.error("Invalid difficulty selected");
+        }
+      });
+
+
+    };
+
+    $(document).ready(setup);
+  </script>
+</body>
+</html>
